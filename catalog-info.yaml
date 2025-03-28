@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ic010t54j-python-gitops
+  description: This is GitOps manifest for ic010t54j-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ic010t54j-python
+    backstage.io/kubernetes-id: ic010t54j-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ic010t54j-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ic010t54j-python
